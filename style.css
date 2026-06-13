@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  color: #222;
+  font-family: "Libre Franklin", sans-serif;
+
+  background-color: #ececec;
+  background-image: repeating-linear-gradient(45deg, #fffa 0 1px, transparent 1px 30px), repeating-linear-gradient(-45deg, #fffa 0 1px, transparent 1px 30px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1cap;
+}
+
+.soccer-wrapper {
+  position: relative;
+}
+
+@keyframes letter-bounce {
+  0% { transform: scaleX(1.2) scaleY(0.75); }
+  45% { transform: scaleX(1) scaleY(1); }
+}
+
+.letter {
+  display: inline-block;
+  
+  will-change: transform;
+  animation: letter-bounce 0.35s ease both infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes bounce {
+  from { translate: -50% 100%; }
+  to { translate: -50% 0; }
+}
+
+@keyframes rotate {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+.soccer {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  translate: -50% 0;
+  
+  --size: 50px;
+  width: var(--size);
+  height: var(--size);
+  font-size: calc(var(--size) * 0.8);
+  margin-bottom: 25px;
+  
+  will-change: transform;
+  animation: rotate 4s both linear infinite, 
+    bounce 0.35s ease-out both infinite alternate;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Noto Emoji", sans-serif;
+}
+
+
